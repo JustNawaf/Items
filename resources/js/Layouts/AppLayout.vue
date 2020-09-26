@@ -6,16 +6,16 @@
                 <div class="flex justify-between h-16">
                     <div class="flex">
                         <!-- Logo -->
-                        <div class="flex-shrink-0 flex items-center">
-                            <a href="/dashboard">
-                                <jet-application-mark class="block h-9 w-auto" />
+                        <div class="flex-shrink-0 flex items-center ">
+                            <a class="bold" href="/">
+                                Items Site
                             </a>
                         </div>
 
                         <!-- Navigation Links -->
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <jet-nav-link href="/dashboard" :active="$page.currentRouteName == 'dashboard'">
-                                Dashboard
+                            <jet-nav-link href="/" :active="$page.currentRouteName == 'index'">
+                                Items Management Page
                             </jet-nav-link>
                         </div>
                     </div>
@@ -40,9 +40,9 @@
                                         Profile
                                     </jet-dropdown-link>
 
-                                    <jet-dropdown-link href="/user/api-tokens" v-if="$page.jetstream.hasApiFeatures">
+                                    <!-- <jet-dropdown-link href="/user/api-tokens" v-if="$page.jetstream.hasApiFeatures">
                                         API Tokens
-                                    </jet-dropdown-link>
+                                    </jet-dropdown-link> -->
 
                                     <div class="border-t border-gray-100"></div>
 
@@ -108,8 +108,8 @@
             <!-- Responsive Navigation Menu -->
             <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                 <div class="pt-2 pb-3 space-y-1">
-                    <jet-responsive-nav-link href="/dashboard" :active="$page.currentRouteName == 'dashboard'">
-                        Dashboard
+                    <jet-responsive-nav-link href="/" :active="$page.currentRouteName == 'index'">
+                        Items Management Page
                     </jet-responsive-nav-link>
                 </div>
 
@@ -131,9 +131,9 @@
                             Profile
                         </jet-responsive-nav-link>
 
-                        <jet-responsive-nav-link href="/user/api-tokens" :active="$page.currentRouteName == 'api-tokens.index'" v-if="$page.jetstream.hasApiFeatures">
+                        <!-- <jet-responsive-nav-link href="/user/api-tokens" :active="$page.currentRouteName == 'api-tokens.index'" v-if="$page.jetstream.hasApiFeatures">
                             API Tokens
-                        </jet-responsive-nav-link>
+                        </jet-responsive-nav-link> -->
 
                         <!-- Authentication -->
                         <form method="POST" @submit.prevent="logout">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia\Inertia::render('Dashboard');
-})->name('dashboard');
+
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+
+    Route::get('/',[ItemController::class,'index'])->name('index');
+    Route::post('/add/item',[ItemController::class,'addItem'])->name('addItem');
+    Route::post('/update/item',[ItemController::class,'updateItem'])->name('addItem');
+
+
+});

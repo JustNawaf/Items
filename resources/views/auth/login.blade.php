@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <h1 class="text-2xl">Items Site</h1>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -37,6 +37,7 @@
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
+
                 @endif
 
                 <x-jet-button class="ml-4">
@@ -44,5 +45,9 @@
                 </x-jet-button>
             </div>
         </form>
+        <div class="w-full h-full mt-6 px-4 py-2 border rounded-md text-center bg-blue-400 text-white cursor-pointer"
+         onclick="location.href='/register'">Register</div>
+
+
     </x-jet-authentication-card>
 </x-guest-layout>

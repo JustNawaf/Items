@@ -16,8 +16,8 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('name');
-            $table->boolean('selected');
+            $table->string('name')->unique();
+            $table->boolean('selected')->default(false);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
